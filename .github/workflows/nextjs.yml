@@ -27,10 +27,10 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_NODE_ENV: ${{ env.NEXT_PUBLIC_NODE_ENV }}
-          NEXT_PUBLIC_PHONE_NUMBER: ${{ env.NEXT_PUBLIC_PHONE_NUMBER }}
-          NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ env.NEXT_PUBLIC_WHATSAPP_NUMBER }}
-          NEXT_PUBLIC_WHATSAPP_SAMPLE_MSG: ${{ env.NEXT_PUBLIC_WHATSAPP_SAMPLE_MSG }}
+          NEXT_PUBLIC_NODE_ENV: ${{ secrets.NEXT_PUBLIC_NODE_ENV }}
+          NEXT_PUBLIC_PHONE_NUMBER: ${{ secrets.NEXT_PUBLIC_PHONE_NUMBER }}
+          NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ secrets.NEXT_PUBLIC_WHATSAPP_NUMBER }}
+          NEXT_PUBLIC_WHATSAPP_SAMPLE_MSG: ${{ secrets.NEXT_PUBLIC_WHATSAPP_SAMPLE_MSG }}
 
       - name: Add .nojekyll
         run: touch ./out/.nojekyll

@@ -1,5 +1,6 @@
 'use client'
 
+import { getBasePath } from '@/shared/helper';
 import { Service } from '../types'
 
 interface ServiceCardProps {
@@ -7,7 +8,7 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service }: ServiceCardProps) {
-  const basePath = process.env.NODE_ENV === 'production' ? '/rana-travels' : '';
+  const basePath = getBasePath();
 
   return (
     <div className="card h-100">

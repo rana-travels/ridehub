@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Cab } from '../types'
+import { getBasePath } from '@/shared/helper'
 
 const typeColors: Record<string, string> = {
   Sedan: '#1a3c6e',
@@ -16,7 +17,7 @@ interface CabCardProps {
 
 export default function CabCard({ cab }: CabCardProps) {
   const badgeColor = typeColors[cab.type] ?? '#1a3c6e'
-  const basePath = process.env.NODE_ENV === 'production' ? '/rana-travels' : '';
+  const basePath = getBasePath();
   const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget
     img.style.display = 'none'

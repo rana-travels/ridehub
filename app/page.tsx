@@ -7,6 +7,7 @@ import ServiceCard from '../components/ServiceCard'
 import cabs from '../data/cabs.json'
 import services from '../data/services.json'
 import { Cab, Service } from '../types'
+import { getBasePath } from '@/shared/helper'
 
 interface Feature {
   icon: string
@@ -76,7 +77,7 @@ const carouselSlides: CarouselSlide[] = [
 
 export default function HomePage() {
   const [current, setCurrent] = useState(0)
-  const basePath = process.env.NODE_ENV === 'production' ? '/rana-travels' : '';
+  const basePath = getBasePath();
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent(prev => (prev + 1) % carouselSlides.length)
